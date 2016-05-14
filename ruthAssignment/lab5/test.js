@@ -42,11 +42,17 @@ function testMultiply() {
 function testSumAndMultiply() {
   if (typeof sumAndMultiply != 'undefined') {
     var sm = sumAndMultiply(147, 256, 14);
-    if ([417, 526848] === sm) {
-      console.log('Sum function passed');
+    var correctAnswer = [417,526848];
+    var thisEqualsThat = 0;
+    for (var i = 0; i < sm.length; i++) {
+      if(sm[i] === correctAnswer[i])
+        thisEqualsThat++;
+    }
+    if (thisEqualsThat == sm.length) {
+      console.log('sumAndMultiply function passed');
       countCorrect++;
     } else {
-      console.log('Sum function failed');
+      console.log('sumAndMultiply function failed');
     }
   } else {
     console.log('Fail. No such function');

@@ -14,8 +14,10 @@ function multiply(a, b) {
 function sumAndMultiply(a, b, c) {
   var s = sum(sum(a,b),c);
   var m = multiply(multiply(a,b),c);
-
-  return [s, m];
+  var sm = [s,m];
+  //console.log(sm);
+  //console.log([s,m]);
+  return sm;
 };
 
 //Problem 4: sumArray
@@ -23,6 +25,7 @@ function sumArray(a) { //a must be an array. maybe we can test for what happens 
   var partialSum = 0;
   for (var i = 0; i < a.length; i++) {
     partialSum = sum(partialSum,a[i]);
+    console.log(partialSum);
   }
   return partialSum;
 };
